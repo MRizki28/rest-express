@@ -1,4 +1,3 @@
-
 module.exports = (sequelize, DataTypes) => {
     const mahasiswaModel = sequelize.define(
         'mahasiswaModel',
@@ -13,12 +12,12 @@ module.exports = (sequelize, DataTypes) => {
                 type: DataTypes.STRING,
                 allowNull: false
             },
-            created_at: {
+            createdAt: {
                 field: "created_at",
                 type: DataTypes.DATE,
                 allowNull: false,
             },
-            updated_at: {
+            updatedAt: {
                 field: "updated_at",
                 type: DataTypes.DATE,
                 allowNull: false,
@@ -30,5 +29,5 @@ module.exports = (sequelize, DataTypes) => {
         }
     );
 
-    return mahasiswaModel
+    return mahasiswaModel;
 };

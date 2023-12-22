@@ -1,18 +1,15 @@
-const { response } = require("../../app");
-const mahasiswaModel = require("../../models/mahasiswaModel");
-const MahasiswaInterfaces = require("../Interfaces/MahasiswaInterfaces");
+const { mahasiswaModel } = require("../../models");
+const HttpResponseTraits = require("../Traits/HttpResponseTraits");
 
-class MahasiswaRepositories extends MahasiswaInterfaces {
+class MahasiswaRepositories {
     async getAllData() {
         const data = await mahasiswaModel.findAll();
-        return response.json({
-            code: 200,
-            message: 'Success',
-            data: data
-        });
-    }
-
-    async createData() {
-
+        if (!data || data.length === 0) {
+            return HttpResponseTraits.dataNotFound();
+        } else {
+            return HttpResponseTraits.success(data);
+        }
     }
 }
+
+module.exports = MahasiswaRepositories;
