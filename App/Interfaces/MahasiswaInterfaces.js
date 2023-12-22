@@ -1,6 +1,0 @@
-class MahasiswaInterfaces {
-    async getAllData() { }
-    async createData(request, response) { }
-}
-
-module.exports = MahasiswaInterfaces;
