@@ -14,6 +14,17 @@ class HttpResponseTraits {
         };
     }
 
+    static checkValidation(errors = null) {
+        return {
+            code: 422,
+            message: 'Check your validation',
+            errors: errors
+        };
+    }
+    
+    
+    
+
     static idOrDataNotFound(message = 'ID or data not found', code = 404) {
         return {
             code: code,

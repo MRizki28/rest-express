@@ -9,4 +9,8 @@ router.get('/', (req, res) => {
     mahasiswaController.getAllData(req,res);
 });
 
+router.post('/create', (req, res) => {
+    mahasiswaController.createData(req,res);
+});
+
 module.exports = router;
