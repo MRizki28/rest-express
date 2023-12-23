@@ -13,4 +13,11 @@ router.post('/create', (req, res) => {
     mahasiswaController.createData(req,res);
 });
 
+router.get('/get/:id', (req, res) => {
+    mahasiswaController.getDataById(req, res);
+})
+router.put('/update/:id', (req, res) => {
+    mahasiswaController.updateData(req, res);
+})
+
 module.exports = router;
