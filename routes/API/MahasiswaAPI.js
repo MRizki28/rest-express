@@ -19,5 +19,9 @@ router.get('/get/:id', (req, res) => {
 router.put('/update/:id', (req, res) => {
     mahasiswaController.updateData(req, res);
 })
+router.delete('/delete/:id', (req, res) => {
+    mahasiswaController.deleteData(req, res);
+})
+
 
 module.exports = router;

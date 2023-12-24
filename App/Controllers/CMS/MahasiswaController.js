@@ -24,6 +24,11 @@ class MahasiswaController {
         const data = await this.mahasiswaRepositories.updateData(request)
         response.json(data);
     }
+
+    async deleteData(request, response) {
+        const data = await this.mahasiswaRepositories.deleteData(request)
+        response.json(data);
+    }
 }
 
 module.exports = MahasiswaController;

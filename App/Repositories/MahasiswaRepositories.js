@@ -80,7 +80,21 @@ class MahasiswaRepositories {
         } catch (error) {
             console.log(error);
         };
+    }
 
+    async deleteData(request) {
+        const id = request.params.id
+        try {
+            const data = await mahasiswaModel.findByPk(id);
+            if (!data) {
+                return HttpResponseTraits.idOrDataNotFound()
+            } else {
+                await data.destroy()
+            }
+            return HttpResponseTraits.delete()
+        } catch (error) {
+            console.log(error);
+        };
     }
 }
 
